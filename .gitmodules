@@ -1,0 +1,4 @@
+[submodule "components/usb_hidx"]
+	path = components/usb_hidx
+	url = https://github.com/Fredo70/usb_hidx
+	branch = main
