@@ -146,15 +146,6 @@ inline void register_all_drivers(USBHIDXComponent *component) {
   component->register_device_driver(new TouchscreenDriver(component));
 #endif
 
-#ifdef HAS_MCP2221_DRIVER
-  auto *mcp2221 = new MCP2221Driver(component);
-  component->register_device_driver(mcp2221);
-  // Register with USB I2C bus if available
-  if (::esphome::usb_i2c::global_usb_i2c_bus) {
-    ::esphome::usb_i2c::global_usb_i2c_bus->set_mcp2221_driver(mcp2221);
-  }
-#endif
-
 #ifdef HAS_CP2112_DRIVER
   component->register_device_driver(new CP2112Driver(component));
 #endif
